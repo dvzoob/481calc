@@ -75,16 +75,5 @@ document.querySelector(".buttons").addEventListener("click", e => {
   updateDisplay();
 });
 
-// Keyboard support (bonus)
-document.addEventListener("keydown", e => {
-  const k = e.key;
-  if (/^[0-9]$/.test(k)) inputNumber(k);
-  else if (["+", "-", "*", "/"].includes(k)) chooseOperator(k);
-  else if (k === "x") chooseOperator("*");
-  else if (k === "Enter" || k === "=") { e.preventDefault(); equals(); }
-  else if (k === "Escape" || k === "c" || k === "C") clearAll();
-  else return;
-  updateDisplay();
-});
 
 updateDisplay();
